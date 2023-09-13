@@ -13,7 +13,7 @@ int main(){
     for(i = 0; i < 10; i++){
         for (u = i + 1; u < 10; u++){
             if(A[i] == A[u]){
-                printf("%d: posicao %d e %d\n", A[i], i, u)
+                printf("%d: posicao %d e %d\n", A[i], i, u);
             }
         }
     }
