@@ -19,6 +19,6 @@ int main(){
             B[i] = false;
         }
     }
-
-    printf("%d", B[3]);
+    printf("1 = True\n0 = False\n");
+    printf("%d", B[1]);
 }
