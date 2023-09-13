@@ -25,7 +25,7 @@ int main(){
             primos[i] = A[i];
         } 
         }
-
+    printf("Os numeros primos sao: \n");
     for(i = 0; i < 10; i++){
         if(primos[i] != 0){
             printf("{%d}\n", primos[i]);
