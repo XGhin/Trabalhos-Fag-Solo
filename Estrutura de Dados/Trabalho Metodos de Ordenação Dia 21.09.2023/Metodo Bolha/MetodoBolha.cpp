@@ -16,9 +16,9 @@ int main() {
     }
 
     // Imprime a lista ordenada
-    printf("Bubble Sort:\n");
+    printf("Lista Ordenada: ");
     for(int ord = 0; ord < n; ord++) {
-        printf("%d ", A[ord]);
+        printf("{%d} ", A[ord]);
     }
 
     return 0;
