@@ -1,0 +1,6 @@
+// Teste de mesa Metodo de Selecao Simples
+    lista > [5, 3, 1, 4, 2].
+
+    Passo 1: [1, 3, 5, 4, 2]
+    Passo 2: [1, 2, 5, 4, 3]
+    Passo 3: [1, 2, 3, 4, 5]

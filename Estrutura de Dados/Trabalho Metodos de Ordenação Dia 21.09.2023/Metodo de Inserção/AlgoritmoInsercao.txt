@@ -1,8 +1,8 @@
-Para i de 1 a n faça
-    chave = lista[i]
-    j = i-1
-    Enquanto j >= 0 e lista[j] > chave faça
-        lista[j+1] = lista[j]
-        j = j-1
-    lista[j+1] = chave
+Para ord de 1 a n faça
+    chave = lista[ord]
+    des = ord-1
+    Enquanto des >= 0 e lista[des] > chave faça
+        lista[des+1] = lista[des]
+        des = des-1
+    lista[des+1] = chave
 Fim Para
