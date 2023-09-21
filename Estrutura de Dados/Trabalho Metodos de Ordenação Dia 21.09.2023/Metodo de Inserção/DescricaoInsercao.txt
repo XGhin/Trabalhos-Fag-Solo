@@ -1,0 +1,7 @@
+O Método de Inserção é um algoritmo de ordenação que funciona da seguinte maneira
+    
+    1. A lista é dividida em duas partes: uma parte ordenada e outra desordenada.
+    
+    2. A parte ordenada começa com o primeiro elemento da lista, e a parte desordenada contém os elementos restantes.
+    
+    3. O algoritmo percorre a parte desordenada e insere cada elemento na posição correta da parte ordenada, deslocando os elementos maiores conforme necessário.
