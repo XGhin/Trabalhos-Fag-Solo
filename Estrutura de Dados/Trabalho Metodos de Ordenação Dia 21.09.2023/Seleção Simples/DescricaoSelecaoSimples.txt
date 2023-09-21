@@ -1,0 +1,11 @@
+O Método de Seleção Simples é um algoritmo de ordenação que funciona da sequinte maneira
+
+    1. Divide a lista em duas partes: uma parte ordenada e outra desordenada.
+
+    2. A parte ordenada começa vazia e a parte desordenada contém todos os elementos da lista.
+
+    3. O algoritmo encontra o menor elemento na parte desordenada e o troca com o primeiro elemento da parte desordenada.
+
+    4. Agora, o primeiro elemento da lista está na parte ordenada e o menor elemento está na parte desordenada.
+
+    5. O processo é repetido para o restante da parte desordenada, movendo gradualmente os menores elementos para a parte ordenada.

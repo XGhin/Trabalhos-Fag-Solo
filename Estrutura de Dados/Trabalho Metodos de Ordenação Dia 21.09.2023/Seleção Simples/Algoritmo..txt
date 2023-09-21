@@ -1,0 +1,7 @@
+Para ord de 0 a n-1 faça
+    menor = i
+    Para des de ord + 1 a n faça
+        Se lista[des] < lista[menor] então
+            menor = des
+    Trocar lista[ord] com lista[menor]
+Fim Para
