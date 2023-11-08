@@ -1,36 +1,77 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-typedef struct // Cria uma STRUCT para armazenar os dados de uma pessoa
-{
-    float Peso;   // define o campo Peso
-    int Idade;    // define o campo Idade
-    float Altura; // define o campo Altura
-} Pessoa; // Define o nome do novo tipo criado
+#define MAX_SIZE 100
 
-void ImprimePessoa(Pessoa P) // declara o parâmetro como uma struct
-{
-  printf("Idade: %d  Peso: %.2f Altura: %.2f\n", P.Idade, P.Peso, P.Altura);
+typedef struct {
+    int data[MAX_SIZE];
+    int front;
+    int rear;
+} Queue;
+
+// Função para inicializar a fila
+void initialize(Queue *queue) {
+    queue->front = -1;
+    queue->rear = -1;
 }
 
-int main()
-{
-    Pessoa Joao, P2;
-    Pessoa Povo[10];
+// Função para verificar se a fila está vazia
+int isEmpty(Queue *queue) {
+    return (queue->front == -1);
+}
 
-    Joao.Idade = 15;
-    Joao.Peso = 60.5;
-    Joao.Altura = 1.75;
+// Função para verificar se a fila está cheia
+int isFull(Queue *queue) {
+    return ((queue->rear + 1) % MAX_SIZE == queue->front);
+}
 
-    Povo[4].Idade = 23;
-    Povo[4].Peso = 75.3;
-    Povo[4].Altura = 1.89;
+// Função para adicionar um elemento à fila
+void enqueue(Queue *queue, int item) {
+    if (isFull(queue)) {
+        printf("A fila está cheia. Não é possível adicionar mais elementos.\n");
+        return;
+    }
 
-    P2 = Povo[4];
-           P2.Idade++;
+    if (isEmpty(queue)) {
+        queue->front = 0;
+        queue->rear = 0;
+    } else {
+        queue->rear = (queue->rear + 1) % MAX_SIZE;
+    }
 
-    // chama a função que recebe a struct como parâmetro
-    ImprimePessoa(Joao);
-    ImprimePessoa(Povo[4]);
-    ImprimePessoa(P2);
-   return 0;
+    queue->data[queue->rear] = item;
+}
+
+// Função para remover um elemento da fila
+int dequeue(Queue *queue) {
+    if (isEmpty(queue)) {
+        printf("A fila está vazia. Não é possível remover elementos.\n");
+        return -1; // Valor inválido
+    }
+
+    int item = queue->data[queue->front];
+    
+    if (queue->front == queue->rear) {
+        // Se houver apenas um elemento na fila, a fila fica vazia
+        initialize(queue);
+    } else {
+        queue->front = (queue->front + 1) % MAX_SIZE;
+    }
+
+    return item;
+}
+
+int main() {
+    Queue queue;
+    initialize(&queue);
+
+    enqueue(&queue, 10);
+    enqueue(&queue, 20);
+    enqueue(&queue, 30);
+
+    printf("Elemento removido: %d\n", dequeue(&queue));
+    printf("Elemento removido: %d\n", dequeue(&queue));
+    printf("Elemento removido: %d\n", dequeue(&queue));
+
+    return 0;
 }
